@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -13,7 +13,7 @@ export const LoginHome = () => {
 
   const navigate = useNavigate();
 
-  const loader = () => setLoading( !loading );
+  const loader = () => setLoading( loading );
 
   const { register, handleSubmit } = useForm<login>();
   const onSubmit = handleSubmit(( values ) => {
@@ -26,10 +26,11 @@ export const LoginHome = () => {
     if ( user ) {
       toast.success( "Welcom" + " " + values.username );
       navigate('/');
+      setLoading(true);
     } else {
     
       toast.error("invalid username or password");
-      loading === null
+      setLoading(false);
     }
   });
 
@@ -106,7 +107,7 @@ export const LoginHome = () => {
               />
             </svg>
             : null }
-            { loading === true ? "Loading..." : "Sing In" } 
+              {!loading ? 'Sing In'  : 'loading...'}
           </button>
         </form>
       </div>
