@@ -1,0 +1,23 @@
+[
+    {
+        "username": "andres",
+        "password": "123456",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFuZHJlcyIsInBhc3N3b3JkIjoiMTIzNDU2In0.Tb_uvpc8E6qc9rJoJNPXrQSHo_4dgC4iW_kPsUjdkfE"
+    },
+    {
+        "username": "alexis",
+        "password": "asdf1234",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXhpcyIsInBhc3N3b3JkIjoiYXNkZjEyMzQifQ._vfijyueuqAbA-LKjYuNoA3QR9iBi1D4xiVc5B8y9LI"
+    },
+    {
+        "username": "Dani",
+        "password": "qwer1234",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRhbmkiLCJwYXNzd29yZCI6InF3ZXIxMjM0In0.CBymnKgVsgpkIT2TWr8_xbfcNkhdfyq6icsW6fEKaC8"
+    },
+    {
+        "username": "juancho",
+        "password": "rewq1234",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1YW5jaG8iLCJwYXNzd29yZCI6InJld3ExMjM0In0.M-_acGZIM1UV2CEFUt70gVFX4pTwbpO_MFYuunBkRPU"
+    }
+   
+]
