@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -107,7 +107,7 @@ export const LoginHome = () => {
               />
             </svg>
             : null }
-              {!loading ? 'Sing In'  : 'loading...'}
+              { !loading ? 'Sing In'  : 'Loading...'}
           </button>
         </form>
       </div>

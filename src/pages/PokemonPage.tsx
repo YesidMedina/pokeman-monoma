@@ -50,7 +50,7 @@ export const PokemonPage = () => {
           return <PokemonHome pokemon={ pokemon } key={ index } />;
         }) }
       </div>
-      <div className="justify-center p-12 px-16 mx-auto content-between">
+      <div className="justify-center p-12 px-16 mx-auto -mt-16 content-between">
         <button
           className="w-28 mx-auto text-center py-3 bg-green-200
               hover:bg-green-600/50 text-black rounded-lg"
@@ -69,7 +69,7 @@ export const PokemonPage = () => {
           Next
         </button>
 
-        <div className="realtivo w-20 items-center mx-auto py-2 font-mono text-center
+        <div className="-mt-10 realtivo w-20 items-center mx-auto py-2 font-mono text-center
             text-black bg-green-500 bg-gradient-to-br from-green-400 rounded-lg ">
           { counter }
         </div>
