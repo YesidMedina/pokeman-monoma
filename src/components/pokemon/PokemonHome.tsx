@@ -14,6 +14,7 @@ export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
   const [ sourceImage, setSourceImage ] = useState("");
   const [ weights, setWeights ] = useState(0);
   const [ abilities, setAbilities ] = useState("");
+  const [ twoAbilities, setTowAbilities ] = useState("");
 
   const getSourceImage = async () => {
     const respData = await axios.get( pokemon.url );
@@ -30,6 +31,9 @@ export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
     const power = respData.data;
     const { abilities: [{ ability }] } = power;
     setAbilities( ability.name );
+
+    const powerTwo = respData.data.abilities[1].ability.name;
+    setTowAbilities(powerTwo); 
   };
 
   const token = localStorage.getItem('token')
@@ -58,11 +62,11 @@ export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
 
         <hr className="mt-8 bg-slate-400 w-auto" />
 
-        <h5 className="mb-6 mt-8 text-2xl tracking-tight text-green-800
+        <h5 className="mb-6 mt-8 text-2xl font-bold tracking-tight text-green-800
             dark:text-white capitalize">
           { pokemon.name }
         </h5>
-        <p className=" text-green-800 capitalize">{ abilities }</p>
+        <p className=" text-green-800 capitalize">#{ abilities }{' '} #{twoAbilities}</p> 
       </div>
     </>
   );
