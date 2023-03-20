@@ -2,7 +2,7 @@ export interface login {
     id: number,
     username: string,
     password: string,
-    token: string
+    token: null
 }
 
 export interface Profile {

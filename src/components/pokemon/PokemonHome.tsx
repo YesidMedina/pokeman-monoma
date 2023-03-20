@@ -1,13 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AllPokemon } from "../../interfaces/pokemon";
-
 interface Props {
   pokemon: AllPokemon;
 }
 
 export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
+
+  const navigate = useNavigate()
+
   const [ idPokemon, setIdPokemon ] = useState(1);
   const [ sourceImage, setSourceImage ] = useState("");
   const [ weights, setWeights ] = useState(0);
@@ -29,6 +31,11 @@ export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
     const { abilities: [{ ability }] } = power;
     setAbilities( ability.name );
   };
+
+  const token = localStorage.getItem('token')
+    if( !token ) {
+      navigate( '/login' )
+}
 
   useEffect(() => {
     getSourceImage();

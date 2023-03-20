@@ -20,18 +20,17 @@ export const LoginHome = () => {
     const user = userData.find(
       ({ username, password }) =>
         username === values.username &&
-        password === values.password     
-    );
-
+        password === values.password  
+    );   
+    const dataToken = userData.find(({token})=> token)
     if ( user ) {
-      toast.success( "Welcom" + " " + values.username );
-      navigate('/');
-      setLoading(true);
-    } else {
-    
+      toast.success( "Welcom" + " " + values.username );    
+      navigate( '/' );
+    } else {    
       toast.error("invalid username or password");
-      setLoading(false);
+      setLoading( false );
     }
+    localStorage.setItem('token', JSON.stringify( dataToken?.token ))
   });
 
   const [ shown, setShown ] = useState( false );
@@ -107,7 +106,7 @@ export const LoginHome = () => {
               />
             </svg>
             : null }
-              { !loading ? 'Sing In'  : 'Loading...'}
+              { !loading ? 'Sing In'  : 'Loading...' }
           </button>
         </form>
       </div>
@@ -117,3 +116,4 @@ export const LoginHome = () => {
     </div>
   );
 };
+
