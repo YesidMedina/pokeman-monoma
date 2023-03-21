@@ -90,7 +90,7 @@ export const DetailHome = () => {
             </div>
           </div>
         </div>
-        <div className=" px-8 py-12  bg-green-200  bg-gradient-to-r from-white rounded-xl">
+        <div className=" px-8 py-12 bg-green-200 bg-gradient-to-r from-white rounded-xl">
           <div className="mt-10 ml-8 w-full mx-auto">
             <h1 className="text-5xl text-green-800 mb-8 font-bold capitalize">
               { pokemon?.name }

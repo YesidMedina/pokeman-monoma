@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { AllPokemon } from "../../interfaces/pokemon";
 interface Props {
@@ -33,13 +34,14 @@ export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
     setAbilities( ability.name );
 
     const powerTwo = respData.data.abilities[1].ability.name;
-    setTowAbilities(powerTwo); 
+    setTowAbilities( powerTwo ); 
   };
 
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem( 'token' )
     if( !token ) {
       navigate( '/login' )
-}
+      toast.error( "invalid token" );
+    }
 
   useEffect(() => {
     getSourceImage();
@@ -66,7 +68,7 @@ export const PokemonHome: React.FC<Props> = ({ pokemon }) => {
             dark:text-white capitalize">
           { pokemon.name }
         </h5>
-        <p className=" text-green-800 capitalize">#{ abilities }{' '} #{twoAbilities}</p> 
+        <p className=" text-green-800 capitalize">#{ abilities }{' '} #{ twoAbilities }</p> 
       </div>
     </>
   );

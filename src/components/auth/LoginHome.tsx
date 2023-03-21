@@ -24,13 +24,13 @@ export const LoginHome = () => {
     );   
     const dataToken = userData.find(({token})=> token)
     if ( user ) {
-      toast.success( "Welcom" + " " + values.username );    
+      toast.success( "Welcome" + " " + values.username );    
       navigate( '/' );
-    } else {    
+    }else {    
       toast.error("invalid username or password");
       setLoading( false );
     }
-    localStorage.setItem('token', JSON.stringify( dataToken?.token ))
+    localStorage.setItem('token', JSON.stringify( dataToken?.token ))   
   });
 
   const [ shown, setShown ] = useState( false );
